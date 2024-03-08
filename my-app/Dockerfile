@@ -1,11 +1,11 @@
-FROM golang:1.19.3-buster AS build
+FROM golang:1.22-bullseye AS build
 
 WORKDIR /app
 
 COPY go.mod ./
 COPY go.sum ./
 
-RUN go mod download && go mod verify
+RUN go mod download
 
 COPY server.go ./
 
@@ -15,4 +15,4 @@ FROM gcr.io/distroless/base-debian11
 
 COPY --from=build /my-app /my-app
 
-ENTRYPOINT ["/my-app"]
+CMD ["/my-app"]
