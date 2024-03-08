@@ -17,7 +17,7 @@ spec:
       containers:
         - name: my-app
           imagePullPolicy: Always
-          image: 424432388155.dkr.ecr.us-east-1.amazonaws.com/my-app:latest
+          image: panchanandevops/monitoring-nginx:v0.1.0
           ports:
             - name: http
               containerPort: 8080
