@@ -6,6 +6,7 @@ metadata:
   namespace: cadvisor
   labels:
     component: main
+    release: prometheus
 spec:
   selector:
     matchLabels:
